@@ -1,0 +1,183 @@
+
+       /* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-image: url('/image/bitcoin.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Global Styles */
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #503636;
+}
+
+/* Container */
+.container {    
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header */
+.header {
+    background: linear-gradient(45deg, #333, #555);
+    color: #fff;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    animation: fadeInDown 1s ease-in-out;
+}
+
+.header .logo {
+    font-size: 28px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav ul li a:hover {
+    background: #f4a261;
+    color: #333;
+    transform: scale(1.1);
+}
+
+/* Footer */
+.footer {
+    background: #222;
+    color: #ccc;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.footer p {
+    margin-bottom: 10px;
+}
+
+.footer .social-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.footer .social-links li a {
+    color: #ccc;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 5px 10px;
+    border-radius: 50%;
+    background: #333;
+    transition: all 0.3s ease-in-out;
+}
+
+.footer .social-links li a:hover {
+    background: #f4a261;
+    color: #fff;
+    transform: rotate(360deg);
+}
+
+/* Animations */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .header .logo {
+        text-align: center;
+        font-size: 24px;
+    }
+}
+
+
+    </style>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">My Website</h1>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+
+
+
+
+
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 My Website. All rights reserved.</p>
+            <ul class="social-links">
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Instagram</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>

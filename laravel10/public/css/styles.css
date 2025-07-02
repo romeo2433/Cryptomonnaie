@@ -1,0 +1,206 @@
+/* Style général de la page */
+.page-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Conteneur principal */
+.box-container, .dashboard-content, .form-container {
+    width: 95%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Sections Achats / Ventes */
+.transactions-section {
+    margin-bottom: 30px;
+}
+
+.section-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #007bff;
+}
+
+/* Tableaux responsifs */
+.purchase-table, .crypto-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #f9f9f9;
+    border-radius: 5px;
+    overflow: hidden;
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.purchase-table th, .purchase-table td,
+.crypto-table th, .crypto-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.purchase-table th, .crypto-table th {
+    background: #007bff;
+    color: white;
+    font-weight: bold;
+}
+
+.purchase-table tbody tr:nth-child(even),
+.crypto-table tbody tr:nth-child(even) {
+    background: #f2f2f2;
+}
+
+/* Boutons adaptés */
+.btn-warning {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 200px;
+    padding: 12px;
+    background: #ffc107;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: 0.3s;
+    margin: 20px auto;
+}
+
+.btn-warning:hover {
+    background: #e0a800;
+    color: white;
+}
+
+/* Formulaires responsifs */
+.form-container {
+    width: 90%;
+    max-width: 500px;
+}
+
+.form-container input, .form-container select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.form-container button {
+    width: 100%;
+    padding: 12px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.form-container button:hover {
+    background: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 22px;
+    }
+    .section-title {
+        font-size: 18px;
+    }
+    .box-container, .dashboard-content, .form-container {
+        padding: 15px;
+    }
+    .btn-warning {
+        width: 100%;
+    }
+    .purchase-table, .crypto-table {
+        font-size: 14px;
+    }
+    .form-container input, .form-container select {
+        padding: 10px;
+    }
+}
+/* Style général */
+.title {
+    font-size: 26px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Tableau des totaux */
+.totaux-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #f9f9f9;
+    border-radius: 5px;
+    overflow: hidden;
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.totaux-table th, .totaux-table td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.totaux-table th {
+    background: #007bff;
+    color: white;
+    font-weight: bold;
+}
+
+.totaux-table tbody tr:nth-child(even) {
+    background: #f2f2f2;
+}
+
+/* Bouton OK */
+.btn-warning {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 200px;
+    padding: 12px;
+    background: #ffc107;
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 8px;
+    transition: 0.3s;
+    margin: 20px auto;
+}
+
+.btn-warning:hover {
+    background: #e0a800;
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .title {
+        font-size: 22px;
+    }
+    .totaux-table {
+        font-size: 14px;
+    }
+    .btn-warning {
+        width: 100%;
+    }
+}
