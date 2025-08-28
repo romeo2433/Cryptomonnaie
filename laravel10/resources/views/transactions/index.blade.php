@@ -4,7 +4,7 @@
 @section('title', 'Dashboard')
 
 @section('content')
-<div class="container">
+<div class="main-content">
     <h1>Transactions</h1>
 
     <!-- Formulaire de filtre -->
@@ -50,7 +50,7 @@
     </form>
 
     <!-- Tableau des transactions -->
-    <table class="table mt-4">
+    <table>
         <thead>
             <tr>
                 <th>Utilisateur</th>
@@ -59,18 +59,18 @@
                 <th>Montant</th>
                 <th>Prix d'achat</th>
                 <th>Date</th>
-                <th>Date</th>
+                <th>Type</th>
 
             </tr>
         </thead>
         <tbody>
-            @foreach($transactions as $transaction)
+            @foreach($transactions->sortByDesc('created_at') as $transaction)
                 <tr>
                     <td>{{ $transaction->user->name }}</td>
                     <td>{{ $transaction->cryptomonnaie->nom }}</td>
                     <td>{{ $transaction->quantite }}</td>
-                    <td>{{ $transaction->montant }}</td>
-                    <td>{{ $transaction->prix_achat }}</td>
+                    <td>{{ $transaction->montant }}$</td>
+                    <td>{{ $transaction->prix_achat }}$</td>
                     <td>{{ $transaction->created_at->format('d/m/Y H:i') }}</td>
                     <td>{{ $transaction->type }}</td>
                 </tr>

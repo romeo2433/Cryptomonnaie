@@ -3,6 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content')
+<div class="main-content">
     <h1>Transactions en attente</h1>
 
     @if(session('success'))
@@ -29,7 +30,7 @@
                         <td>{{ $transaction->idEvenements_portefeuille }}</td>
                         <td>{{ $transaction->user->name }}</td>
                         <td>{{ $transaction->type_evenement }}</td>
-                        <td>{{ $transaction->montant }}</td>
+                        <td>{{ $transaction->montant }}$</td>
                         <td>{{ $transaction->statut }}</td>
                         <td>
                         <form action="{{ route('admin.valider.transaction', $transaction->idEvenements_portefeuille) }}" method="POST">
@@ -44,5 +45,4 @@
             </tbody>
         </table>
     @endif
-</body>
-</html>
+</div>

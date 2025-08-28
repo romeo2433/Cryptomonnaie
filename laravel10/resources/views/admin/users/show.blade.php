@@ -3,6 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content')
+<div class="main-content">
     <h1>Historique des transactions de {{ $user->name }}</h1>
     <div class="container">
     <h1>Profil de {{ $user->name }}</h1>
@@ -26,7 +27,13 @@
         </div>
 
         <button type="submit" class="btn btn-primary">Mettre à jour</button>
+        
     </form>
+    @if(session('success'))
+        <div class="alert alert-success mt-2">
+            {{ session('success') }}
+        </div>
+        @endif
 </div>
 
 
@@ -55,3 +62,4 @@
         </tbody>
     </table>
 </div>      
+</div>

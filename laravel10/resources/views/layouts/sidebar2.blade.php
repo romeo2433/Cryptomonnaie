@@ -39,6 +39,14 @@
             </a>
         </li>
 
+        <li class="nav-item">
+            <a class="nav-link collapsed" href="{{ route('stats.index') }}">
+                <i class="bi bi-bar-chart"></i>
+                <span>Statistiques</span>
+            </a>
+        </li>
+        
+
        
 
         <li class="nav-heading">Administration</li>
@@ -47,7 +55,7 @@
             <a class="nav-link collapsed" href="{{ route('admin.login') }}">
                 <i class="bi bi-box-arrow-right"></i>
                 <span>Déconnexion</span>
-            </a>
+            </a>              
         </li>
     </ul>
 </aside>

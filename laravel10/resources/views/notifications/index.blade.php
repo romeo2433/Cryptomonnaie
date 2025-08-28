@@ -3,6 +3,7 @@
 @section('title', 'Dashboard')
 
 @section('content')
+<div class="main-content">
     <h1>Vos notifications</h1>
 
     @if($notifications->isEmpty())
@@ -22,3 +23,4 @@
         @csrf
         <button type="submit">Marquer comme lues</button>
     </form>
+</div>

@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div class="container">
+<div class="main-content">
     <h3>Historique des transactions de {{ $user->name }}</h3>
 
     @if ($evenements->isEmpty())

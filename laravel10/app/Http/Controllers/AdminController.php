@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Admin;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+use Illuminate\Support\Facades\Storage;
 
 class AdminController extends Controller
 {
@@ -54,6 +55,9 @@ class AdminController extends Controller
     ]);
 
     if ($request->hasFile('avatar')) {
+        if($user->avatar && Storage::disk('public')->exists($user->avatar)){
+            Storage::disk('public')->delete($user->avatar);
+        }
         $avatarPath = $request->file('avatar')->store('avatars', 'public');
         $user->avatar = $avatarPath;
         $user->save();

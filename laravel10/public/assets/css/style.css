@@ -17,6 +17,8 @@ body {
   font-family: "Open Sans", sans-serif;
   background: #f6f9ff;
   color: #444444;
+  background-color: #ffffff;
+  color: #222;
 }
 
 a {
@@ -610,7 +612,8 @@ h6 {
   scrollbar-width: thin;
   scrollbar-color: #aab7cf transparent;
   box-shadow: 0px 0px 20px rgba(1, 41, 112, 0.1);
-  background-color: #fff;
+  background-color: #f5f5f5;
+  
 }
 
 @media (max-width: 1199px) {
@@ -1230,4 +1233,64 @@ h6 {
   text-align: center;
   font-size: 13px;
   color: #012970;
+}
+
+
+
+
+/* sidebar par défaut */
+.sidebar {
+  width: 250px;
+  min-height: 100vh;
+  padding: 15px;
+  background: #f8f9fa;
+  transition: all 0.3s ease;
+}
+
+/* contenu par défaut (avec sidebar ouvert) */
+.main-content {
+  margin-left: 250px;
+  padding: 30px;
+  padding-top: 60px;
+  width: 100%;
+  transition: all 0.3s ease;
+}
+
+/* quand le sidebar est fermé */
+.sidebar.closed {
+  width: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.main-content.expanded {
+  margin-left: 0;
+}
+.dashboard-container {
+  display: flex;
+  transition: all 0.3s ease;
+}
+
+
+/* Thème sombre */
+body.dark-mode {
+  background-color: #272525;
+  color: #e0e0e0;
+}
+body.dark-mode .sidebar {
+  background-color: #1e1e1e;
+  color: #ddd;
+}
+.toggle-dark {
+  cursor: grabbing  ;
+  padding: 5px;
+  border-radius: 3px;
+  background: #ddd;
+}
+body.dark-mode .toggle-dark {
+  background: #444;
+  color: #fff;
+}
+.night {
+  margin-left: 20%;
 }

@@ -26,11 +26,12 @@ class LoginController extends Controller
         // Tenter de connecter l'utilisateur
         if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password])) {
             // Si la connexion réussit, rediriger vers le tableau de bord
-            return redirect()->intended('/admin/transactions');
+            return redirect('/admin/transactions');
+
         }
 
         if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password], $request->remember)) {
-            return redirect()->intended('/admin/transactions');
+            return redirect('/admin/transactions');
         }
 
         // Si la connexion échoue, rediriger avec un message d'erreur

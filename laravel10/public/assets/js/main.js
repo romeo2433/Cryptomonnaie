@@ -41,12 +41,51 @@
 
   /**
    * Sidebar toggle
-   */
-  if (select('.toggle-sidebar-btn')) {
-    on('click', '.toggle-sidebar-btn', function(e) {
-      select('body').classList.toggle('toggle-sidebar')
-    })
+  */ 
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggleBtn = document.querySelector('.toggle-sidebar-btn');
+    const sidebar = document.querySelector('.sidebar');
+    const content = document.querySelector('.main-content');
+  
+    if (toggleBtn && sidebar && content) {
+      toggleBtn.addEventListener('click', () => {
+        // Ajout / retrait des classes
+        sidebar.classList.toggle('closed');
+        content.classList.toggle('expanded');
+        
+        // Optionnel : ajouter une classe sur le body si tu veux l’utiliser dans le CSS
+        document.body.classList.toggle('toggle-sidebar');
+      });
+    }
+  });
+
+
+
+
+  const toggleDark = document.getElementById('toggle-dark');
+
+toggleDark.addEventListener('click', () => {
+  document.body.classList.toggle('dark-mode');
+  
+  // Change le texte du bouton
+  if (document.body.classList.contains('dark-mode')) {
+    toggleDark.textContent = "☀️ Mode clair";
+  } else {
+    toggleDark.textContent = "🌙 Mode sombre";
   }
+
+  // (Optionnel) Sauvegarder le choix dans le navigateur
+  localStorage.setItem("theme", document.body.classList.contains("dark-mode") ? "dark" : "light");
+});
+
+// Charger le choix sauvegardé
+if (localStorage.getItem("theme") === "dark") {
+  document.body.classList.add("dark-mode");
+  toggleDark.textContent = "☀️ Mode clair";
+}
+
+  
+  /**/
 
   /**
    * Search bar toggle

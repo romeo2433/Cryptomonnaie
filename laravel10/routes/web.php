@@ -43,42 +43,37 @@ Route::post('otp/verify', [AuthVueController::class, 'verifyOtp'])->name('otp.ve
 Route::post('/logout', [AuthVueController::class, 'logout'])->name('logout');
 
 
-Route::get('/portefeuille', [PortefeuilleController::class, 'showDashboard'])->name('portefeuille.dashboard');
-Route::middleware('auth')->get('/portefeuille', [PortefeuilleController::class, 'showDashboard'])->name('portefeuille.dashboard');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/portefeuille', [PortefeuilleController::class, 'showDashboard'])->name('portefeuille.dashboard');
 
 // Route pour afficher le formulaire de transaction
 //Route::get('/evenement/create', [EvenementPortefeuilleController::class, 'showForm'])->name('evenement.create');
 //Route::post('/evenement/store', [EvenementPortefeuilleController::class, 'store'])->name('evenement.store');
-Route::get('/portefeuille/evenement', [EvenementPortefeuilleController::class, 'showEvenement'])->name('portefeuille.evenement');
-Route::get('/evenement/create', [EvenementPortefeuilleController::class, 'showForm'])->name('evenement.create');
-Route::post('/evenement/store', [EvenementPortefeuilleController::class, 'store'])->name('evenement.store');
+    Route::get('/portefeuille/evenement', [EvenementPortefeuilleController::class, 'showEvenement'])->name('portefeuille.evenement');
+    Route::get('/evenement/create', [EvenementPortefeuilleController::class, 'showForm'])->name('evenement.create');
+    Route::post('/evenement/store', [EvenementPortefeuilleController::class, 'store'])->name('evenement.store');
 //Route::get('/dashboard', [EvenementPortefeuilleController::class, 'showForm'])->name('portefeuille.dashboard');
 
 
-Route::middleware(['auth'])->group(function () {
+
     Route::get('/achat', [AchatCryptomonnaieController::class, 'index'])->name('achat.index');
     Route::post('/achat', [AchatCryptomonnaieController::class, 'acheter'])->name('achat.acheter');
-});
-Route::get('/transactions', [AchatCryptomonnaieController::class, 'listeTransactions'])->name('transactions.liste');
 
-Route::middleware(['auth'])->group(function () {
+    Route::get('/transactions', [AchatCryptomonnaieController::class, 'listeTransactions'])->name('transactions.liste');
+
+
     Route::get('/vente', [VenteCryptomonnaieController::class, 'index'])->name('vente.index');
     Route::post('/vente', [VenteCryptomonnaieController::class, 'vendre'])->name('cryptomonnaies.vendre');
-});
 
 //total achat 
-Route::middleware(['auth'])->group(function () {
-Route::get('/achats/totaux', [AchatCryptomonnaieController::class, 'totalAchatParCryptomonnaie'])->name('achats.totaux');
-});
+    Route::get('/achats/totaux', [AchatCryptomonnaieController::class, 'totalAchatParCryptomonnaie'])->name('achats.totaux');
 
+    Route::get('/vente/effectuer', [TransactionController::class, 'create'])->name('vente.create');
+    Route::post('/vente/effectuer', [TransactionController::class, 'effectuerVente'])->name('vente.effectuer');
 
-Route::get('/vente/effectuer', [TransactionController::class, 'create'])->name('vente.create');
-Route::post('/vente/effectuer', [TransactionController::class, 'effectuerVente'])->name('vente.effectuer');
-
-
-Route::get('analyse/form', [AnalyseController::class, 'analyseForm'])->name('analyse.form');
-Route::post('analyse/calculate', [AnalyseController::class, 'calculate'])->name('analyse.calculate');
-
+    Route::get('analyse/form', [AnalyseController::class, 'analyseForm'])->name('analyse.form');
+    Route::post('analyse/calculate', [AnalyseController::class, 'calculate'])->name('analyse.calculate');
+    });
 
 Route::get('/admin/register', [AdminController::class, 'showRegistrationForm'])->name('admin.register');
 Route::post('/admin/register', [AdminController::class, 'register'])->name('admin.register.submit');
@@ -117,6 +112,10 @@ Route::get('/historique/admin', [TransactionController::class, 'index'])->name('
 Route::prefix('admin')->group(function () {
     Route::get('/users', [AdminController::class, 'index'])->name('admin.users.index');
     Route::get('/users/{id}', [AdminController::class, 'show'])->name('admin.users.show');
+
+
+
+
 });
 
 Route::put('/admin/users/{user}/update-avatar', [AdminController::class, 'updateAvatar'])->name('admin.users.update_avatar');
@@ -124,3 +123,5 @@ Route::put('/admin/users/{user}/update-avatar', [AdminController::class, 'update
 
 Route::get('/admin/users/{id}/historique', [EvenementPortefeuilleController::class, 'historiqueParUtilisateur'])
      ->name('admin.users.historique');
+
+     Route::get('/admin/stats', [App\Http\Controllers\StatsController::class, 'index'])->name('stats.index');

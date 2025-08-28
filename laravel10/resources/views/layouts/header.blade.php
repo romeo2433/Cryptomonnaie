@@ -57,13 +57,19 @@
         <input type="text" name="query" placeholder="Search" title="Enter search keyword">
         <button type="submit" title="Search"><i class="bi bi-search"></i></button>
       </form>
-    </div><!-- End Search Bar -->
-
+    </div>
+    <!-- End Search Bar-->  
+    <div class="night">
+    <button id="toggle-dark" class="toggle-dark">
+      🌙 Mode sombre
+    </button>
+  </div>
     <nav class="header-nav ms-auto">
       <ul class="d-flex align-items-center">
 
-        <li class="nav-item d-block d-lg-none">
+        <li class="nav-item d-block d-lg-none">      
           <a class="nav-link nav-icon search-bar-toggle " href="#">
+            
             <i class="bi bi-search"></i>
           </a>
         </li><!-- End Search Icon-->

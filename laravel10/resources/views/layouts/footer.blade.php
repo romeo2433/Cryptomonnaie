@@ -3,6 +3,14 @@
   <footer id="footer" class="footer">
     <div class="copyright">
       &copy; Copyright <strong><span>Cryptomonnaies</span></strong>. All Rights Reserved
+      <p>
+        Conçu avec ❤️ par l’équipe de développement. Merci beaucoup de vister le site de Roro +261
+        38 81381 46 
+        </p>
+        <p>
+          💻 Retrouvez mes projets sur 
+          <a href="https://github.com/romeo2433" target="_blank">mon GitHub</a>.
+          </p>          
     </div>
     <div class="credits">
       <!-- All the links in the footer should remain intact. -->

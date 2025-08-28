@@ -22,15 +22,3 @@
 
 </body>
 </html>
-
-<style>
-    .dashboard-container {
-        display: flex;
-    }
-
-    .main-content {
-        margin-left: 260px;
-        padding: 20px;
-        width: 100%;
-    }
-</style>
