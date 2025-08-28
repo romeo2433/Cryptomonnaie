@@ -37,3 +37,4 @@ n.b:rAHA SANATRIA MISY MI FAILD DIA DIA ITO COMMANDE MAMERINA ILAY BASE
 
         http://127.0.0.1:8000/login pour utlisateur 
         http://127.0.0.1:8000/admin/login pour Admin
+        http://127.0.0.1:8000/admin/register
